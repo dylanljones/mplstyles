@@ -28,7 +28,7 @@ Please feel free to add your own favourite styles to the libary!
 
 > **Note**: If you are using PyCharm to edit the ``*.mplstyle`` files, right-click on the file 
 and click 'Override File Type'. There, choose the ``Ini`` file-type. This enables
-some synthax highlighting, whcich makes it easier to find enables sections.
+some synthax highlighting, which makes it easier to find uncommented sections.
 
 ## Usage
 
