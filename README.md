@@ -37,14 +37,15 @@ can be loaded via
 ````python
 import matplotlib.pyplot as plt
 
-plt.style.use("file.mplstyle")
+plt.style.use("/full/path/to/file.mplstyle")
 ````
 
 The included styles of ``mplstyles`` can be applied with the ``use_mplstyle`` method:
 ````python
 from mplstyles import use_mplstyle
 
-use_mplstyle("figures")
+use_mplstyle("figures.mplstyle")  # with file extension
+use_mplstyle("figures")           # or without file extension
 ````
 
 A list of all included style files can be printed like this:
