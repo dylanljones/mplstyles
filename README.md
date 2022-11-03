@@ -57,6 +57,12 @@ print(get_mplstyles())
 
 ## Examples
 
+All examples are generated with the following code and by applying the different styles:
+````python
+fig, ax = plt.subplots()
+ax.plot(x, y)
+````
+
 ### ``figures.mplstyle``
 
 <p align="center">
