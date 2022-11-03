@@ -23,6 +23,9 @@ style sheets take precedence over ``matplotlibrc`` files.
 This project uses the third option and is intended as a collection of usefull 
 matplotlibrc style files for scientific plotting.
 
+Please feel free to add your own favourite styles to the libary!
+
+
 > **Note**: If you are using PyCharm to edit the ``*.mplstyle`` files, right-click on the file 
 and click 'Override File Type'. There, choose the ``Ini`` file-type. This enables
 some synthax highlighting, whcich makes it easier to find enables sections.
@@ -55,8 +58,17 @@ print(get_mplstyles())
 
 ### ``figures.mplstyle``
 
+<p align="center">
+  <img src="https://raw.githubusercontent.com/dylanljones/mplstyles/master/examples/figures.mplstyle.png" alt="figures.mplstyle example" style="width: 400px" />
+</p>
+
 
 ### ``plots.mplstyle``
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/dylanljones/mplstyles/master/examples/plots.mplstyle.png" alt="figures.mplstyle example" style="width: 400px" />
+</p>
+
 
 
 [mplstyle]: https://matplotlib.org/stable/tutorials/introductory/customizing.html
