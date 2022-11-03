@@ -17,13 +17,13 @@ There are three ways to customize Matplotlib (see [mplstyle] for more informatio
 - [Using style sheets](https://matplotlib.org/stable/tutorials/introductory/customizing.html#customizing-with-style-sheets)
 - [Changing your matplotlibrc file](https://matplotlib.org/stable/tutorials/introductory/customizing.html#customizing-with-matplotlibrc-files)
 
-> **Note**: Setting rcParams at runtime takes precedence over style sheets, 
-> style sheets take precedence over ``matplotlibrc`` files.
+> **Warning**: Setting rcParams at runtime takes precedence over style sheets, 
+style sheets take precedence over ``matplotlibrc`` files.
 
 This project uses the third option and is intended as a collection of usefull 
 matplotlibrc style files for scientific plotting.
 
-Hint: If you are using PyCharm to edit the ``*.mplstyle`` files, right-click on the file 
+> **Note**: If you are using PyCharm to edit the ``*.mplstyle`` files, right-click on the file 
 and click 'Override File Type'. There, choose the ``Ini`` file-type. This enables
 some synthax highlighting, whcich makes it easier to find enables sections.
 
