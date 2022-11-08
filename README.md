@@ -65,17 +65,21 @@ fig, ax = plt.subplots()
 ax.plot(x, y)
 ````
 
-### ``figures.mplstyle``
-
-<p align="center">
-  <img src="https://raw.githubusercontent.com/dylanljones/mplstyles/master/examples/figures.mplstyle.png" alt="figures.mplstyle example" style="width: 400px" />
-</p>
-
-
 ### ``plots.mplstyle``
+
+Style for developing
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/dylanljones/mplstyles/master/examples/plots.mplstyle.png" alt="figures.mplstyle example" style="width: 400px" />
+</p>
+
+
+### ``aps.mplstyle``
+
+Style for generatig figures for the APS journals (physical review, ...)
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/dylanljones/mplstyles/master/examples/aps.mplstyle.png" alt="figures.mplstyle example" style="width: 400px" />
 </p>
 
 
