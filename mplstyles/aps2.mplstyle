@@ -1,4 +1,4 @@
-#### APS SINGLE COLUMN MATPLOTLIBRC FORMAT
+#### APS DOUBLE COLUMN MATPLOTLIBRC FORMAT
 ## https://journals.aps.org/prl/authors#:~:text=Figures%20should%20have%20a%20width,all%20figures%20electronically%20for%20production.
 
 ## ***************************************************************************
@@ -487,7 +487,7 @@ legend.fancybox:       True     # if True, use a rounded box for the
 #figure.titleweight: normal    # weight of the figure title
 #figure.labelsize:   large     # size of the figure label (``Figure.sup[x|y]label()``)
 #figure.labelweight: normal    # weight of the figure label
-figure.figsize:      3.375, 2.531 # figure size in inches, ratio=1.33333 or 1.61803398 (golden ration)
+figure.figsize:      6.75, 2.531 # figure size in inches (ratio=1.333)
 figure.dpi:          300       # figure dots per inch
 #figure.facecolor:   white     # figure face color
 #figure.edgecolor:   white     # figure edge color
