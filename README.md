@@ -11,16 +11,16 @@ where `VERSION` is a release, tag or branch name.
 
 ## Introduction
 
-Matplotlib allows you to customize the properties and default styles of plots.  
+Matplotlib allows you to customize the properties and default styles of plots.
 There are three ways to customize Matplotlib (see [mplstyle] for more information):
 - [Setting rcParams at runtime](https://matplotlib.org/stable/tutorials/introductory/customizing.html#customizing-with-dynamic-rc-settings)
 - [Using style sheets](https://matplotlib.org/stable/tutorials/introductory/customizing.html#customizing-with-style-sheets)
 - [Changing your matplotlibrc file](https://matplotlib.org/stable/tutorials/introductory/customizing.html#customizing-with-matplotlibrc-files)
 
-> **Warning**: Setting rcParams at runtime takes precedence over style sheets, 
+> **Warning**: Setting rcParams at runtime takes precedence over style sheets,
 style sheets take precedence over ``matplotlibrc`` files.
 
-This project uses the third option and is intended as a collection of usefull 
+This project uses the third option and is intended as a collection of usefull
 matplotlibrc style files for scientific plotting.
 
 Please feel free to add your own favourite styles to the libary! Start from the empty
@@ -28,7 +28,7 @@ Please feel free to add your own favourite styles to the libary! Start from the 
 If you are happy with the style, add the file to the ``mplstyles`` and open a pull request. 
 
 
-> **Note**: If you are using PyCharm to edit the ``*.mplstyle`` files, right-click on the file 
+> **Note**: If you are using PyCharm to edit the ``*.mplstyle`` files, right-click on the file
 and click 'Override File Type'. There, choose the ``Ini`` file-type. This enables
 some synthax highlighting, which makes it easier to find uncommented sections.
 
