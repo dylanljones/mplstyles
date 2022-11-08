@@ -25,7 +25,8 @@ matplotlibrc style files for scientific plotting.
 
 Please feel free to add your own favourite styles to the libary! Start from the empty 
 template file ``default.mplstyle`` and change the parameters you like.
-If you are happy with the style, add the file to the ``mplstyles`` and open a pull request. 
+If you are happy with the style, add the file to the ``mplstyles`` package and open 
+a pull request. 
 
 
 > **Note**: If you are using PyCharm to edit the ``*.mplstyle`` files, right-click on the file
@@ -62,7 +63,10 @@ print(get_mplstyles())
 All examples are generated with the following code and by applying the different styles:
 ````python
 fig, ax = plt.subplots()
-ax.plot(x, y)
+ax.plot(x, y, label="f(x)")
+ax.set_xlabel("x")
+ax.set_ylabel("y")
+ax.legend()
 ````
 
 ### ``plots.mplstyle``
@@ -80,6 +84,24 @@ Style for generatig single-column figures for APS journals (physical review, ...
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/dylanljones/mplstyles/master/examples/aps.mplstyle.png" alt="aps.mplstyle example" style="width: 400px" />
+</p>
+
+
+### ``aps1.5.mplstyle``
+
+Style for generatig 1.5-column figures for APS journals (physical review, ...)
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/dylanljones/mplstyles/master/examples/aps1.5.mplstyle.png" alt="aps1.5.mplstyle example" style="width: 400px" />
+</p>
+
+
+### ``aps2.mplstyle``
+
+Style for generatig double-column figures for APS journals (physical review, ...)
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/dylanljones/mplstyles/master/examples/aps2.mplstyle.png" alt="aps2.mplstyle example" style="width: 400px" />
 </p>
 
 

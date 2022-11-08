@@ -19,7 +19,7 @@ def plot(x, y):
 
 
 def main():
-    x = np.linspace(-10, +10, 1000)
+    x = np.linspace(-4 * np.pi, +4 * np.pi, 1000)
     y = np.sin(x) / x
 
     for style in get_mplstyles():
