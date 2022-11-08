@@ -23,8 +23,8 @@ style sheets take precedence over ``matplotlibrc`` files.
 This project uses the third option and is intended as a collection of usefull
 matplotlibrc style files for scientific plotting.
 
-Please feel free to add your own favourite styles to the libary! Start from the empty
-``matplotlibrc`` template file ``default.mplstyle`` and change the parameters you like.
+Please feel free to add your own favourite styles to the libary! Start from the empty 
+template file ``default.mplstyle`` and change the parameters you like.
 If you are happy with the style, add the file to the ``mplstyles`` and open a pull request. 
 
 
