@@ -72,6 +72,9 @@ ax.legend()
 ### ``plots.mplstyle``
 
 Style for developing
+````python
+use_mplstyle("plots")
+````
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/dylanljones/mplstyles/master/examples/plots.mplstyle.png" alt="figures.mplstyle example" style="width: 400px" />
@@ -81,6 +84,9 @@ Style for developing
 ### ``aps.mplstyle``
 
 Style for generatig single-column figures for APS journals (physical review, ...)
+````python
+use_mplstyle("aps")
+````
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/dylanljones/mplstyles/master/examples/aps.mplstyle.png" alt="aps.mplstyle example" style="width: 400px" />
@@ -90,6 +96,9 @@ Style for generatig single-column figures for APS journals (physical review, ...
 ### ``aps1.5.mplstyle``
 
 Style for generatig 1.5-column figures for APS journals (physical review, ...)
+````python
+use_mplstyle("aps1.5")
+````
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/dylanljones/mplstyles/master/examples/aps1.5.mplstyle.png" alt="aps1.5.mplstyle example" style="width: 400px" />
@@ -99,6 +108,9 @@ Style for generatig 1.5-column figures for APS journals (physical review, ...)
 ### ``aps2.mplstyle``
 
 Style for generatig double-column figures for APS journals (physical review, ...)
+````python
+use_mplstyle("aps2")
+````
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/dylanljones/mplstyles/master/examples/aps2.mplstyle.png" alt="aps2.mplstyle example" style="width: 400px" />
