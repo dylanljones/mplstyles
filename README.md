@@ -76,10 +76,10 @@ Style for developing
 
 ### ``aps.mplstyle``
 
-Style for generatig figures for the APS journals (physical review, ...)
+Style for generatig single-column figures for APS journals (physical review, ...)
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/dylanljones/mplstyles/master/examples/aps.mplstyle.png" alt="figures.mplstyle example" style="width: 400px" />
+  <img src="https://raw.githubusercontent.com/dylanljones/mplstyles/master/examples/aps.mplstyle.png" alt="aps.mplstyle example" style="width: 400px" />
 </p>
 
 
