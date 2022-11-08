@@ -9,14 +9,22 @@ import matplotlib.pyplot as plt
 from mplstyles import get_mplstyles, mplstyle_context
 
 
+def plot(x, y):
+    fig, ax = plt.subplots()
+    ax.plot(x, y, label="f(x)")
+    ax.set_xlabel("x")
+    ax.set_ylabel("y")
+    ax.legend()
+    return fig, ax
+
+
 def main():
-    x = np.linspace(-5, +5, 1001)
-    y = np.sin(x)
+    x = np.linspace(-10, +10, 1000)
+    y = np.sin(x) / x
 
     for style in get_mplstyles():
         with mplstyle_context(style):
-            fig, ax = plt.subplots()
-            ax.plot(x, y)
+            fig, ax = plot(x, y)
             fig.savefig(f"{style}.png")
 
 
