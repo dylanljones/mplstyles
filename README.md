@@ -7,7 +7,7 @@ Install from GitHub via
 ```commandline
 pip install git+https://github.com/dylanljones/mplstyles.git@VERSION
 ```
-where `VERSION` is a release, tag or branch name.
+where `VERSION` is a optional release, tag or branch name.
 
 ## Introduction
 
@@ -35,20 +35,40 @@ some synthax highlighting, which makes it easier to find uncommented sections.
 
 ## Usage
 
-The rc-files are contained in the ``mplstyles`` package. In general, any matplotlibrc file
-can be loaded via
-````python
-import matplotlib.pyplot as plt
-
-plt.style.use("/full/path/to/file.mplstyle")
-````
-
 The included styles of ``mplstyles`` can be applied with the ``use_mplstyle`` method:
 ````python
 from mplstyles import use_mplstyle
 
-use_mplstyle("figures.mplstyle")  # with file extension
-use_mplstyle("figures")           # or without file extension
+use_mplstyle("figure")
+...
+````
+
+The can also be used in a context:
+````python
+from mplstyles import mplstyle_context
+
+with mplstyle_context("figure"):
+    ...
+````
+
+Alternatively, the included styles can be registered and used via the normal 
+``plt.style`` method:
+````python
+from mplstyles import init_mplstyles
+
+init_mplstyles()  # register the styles
+
+plt.style.use("figure")
+...
+with plt.style.context("figure"):
+    ...
+````
+You can also combine styles:
+````python
+from mplstyles import use_mplstyle
+
+use_mplstyle("figure", "aps")
+...
 ````
 
 A list of all included style files can be printed like this:
@@ -57,6 +77,43 @@ from mplstyles import get_mplstyles
 
 print(get_mplstyles())
 ````
+The rc-files are contained in the ``.../mplstyles/styles/`` directory.
+
+## Primary styles
+
+The main styles are ``plot`` and ``figure``. The ``plot`` style is intended for plotting 
+results while working, preparing or creating a pre-print. The ``figure`` style should be
+used for generating the final figures for publications. 
+
+
+## Journal styles
+
+The journal styles are *additive* and should be used with the primary styles.
+They define the format specifications for each jornal. The style for a single 
+column figure for the APS fournal, for example, can be used as follows:
+````python
+from mplstyles import use_mplstyle
+
+use_mplstyle("figure", "aps")
+...
+````
+You also can mix in the figure size of 1.5- or double-column figures via the context 
+manager:
+````python
+from mplstyles import use_mplstyle, mplstyle_context
+
+use_mplstyle("figure", "aps")
+
+...  # single-coluimn plots
+
+with mplstyle_context("aps1.5"):
+    ... # 1.5-column plots
+
+with mplstyle_context("aps2"):
+    ... # double-column plots
+````
+
+
 
 ## Examples
 
@@ -69,51 +126,55 @@ ax.set_ylabel("y")
 ax.legend()
 ````
 
-### ``plots.mplstyle``
+### ``plot``
 
 Style for developing
 ````python
-use_mplstyle("plots")
+use_mplstyle("plot")
 ````
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/dylanljones/mplstyles/master/examples/plots.mplstyle.png" alt="figures.mplstyle example" style="width: 400px" />
+  <img src="https://raw.githubusercontent.com/dylanljones/mplstyles/master/examples/figures/plot.png" width="500" />
 </p>
 
 
-### ``aps.mplstyle``
+### ``figure``
+
+Style for developing
+````python
+use_mplstyle("figure")
+````
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/dylanljones/mplstyles/master/examples/figures/figure.png" alt="figure.mplstyle example" width="500" />
+</p>
+
+
+### ``aps``
 
 Style for generatig single-column figures for APS journals (physical review, ...)
 ````python
-use_mplstyle("aps")
+use_mplstyle("figure", "aps")
 ````
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/dylanljones/mplstyles/master/examples/aps.mplstyle.png" alt="aps.mplstyle example" style="width: 400px" />
+  <img src="https://raw.githubusercontent.com/dylanljones/mplstyles/master/examples/figures/figure_aps.png" width="500" />
 </p>
 
+Extend to 1.5- or double-column figures:
 
-### ``aps1.5.mplstyle``
-
-Style for generatig 1.5-column figures for APS journals (physical review, ...)
 ````python
-use_mplstyle("aps1.5")
+use_mplstyle("figure", "aps", "aps1.5")
 ````
-
 <p align="center">
-  <img src="https://raw.githubusercontent.com/dylanljones/mplstyles/master/examples/aps1.5.mplstyle.png" alt="aps1.5.mplstyle example" style="width: 400px" />
+  <img src="https://raw.githubusercontent.com/dylanljones/mplstyles/master/examples/figures/figure_aps_aps1.5.png" width="500" />
 </p>
 
-
-### ``aps2.mplstyle``
-
-Style for generatig double-column figures for APS journals (physical review, ...)
 ````python
-use_mplstyle("aps2")
+use_mplstyle("figure", "aps", "aps2")
 ````
-
 <p align="center">
-  <img src="https://raw.githubusercontent.com/dylanljones/mplstyles/master/examples/aps2.mplstyle.png" alt="aps2.mplstyle example" style="width: 400px" />
+  <img src="https://raw.githubusercontent.com/dylanljones/mplstyles/master/examples/figures/figure_aps_aps2.png" width="500" />
 </p>
 
 
