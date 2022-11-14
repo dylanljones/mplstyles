@@ -117,6 +117,7 @@ with mplstyle_context("aps2"):
 
 ## Examples
 
+
 All examples are generated with the following code and by applying the different styles:
 ````python
 fig, ax = plt.subplots()
@@ -126,21 +127,16 @@ ax.set_ylabel("y")
 ax.legend()
 ````
 
-### ``plot``
 
-Style for developing
+### Primary styles
+
 ````python
 use_mplstyle("plot")
 ````
-
 <p align="center">
   <img src="https://raw.githubusercontent.com/dylanljones/mplstyles/master/examples/figures/plot.png" width="500" />
 </p>
 
-
-### ``figure``
-
-Style for developing
 ````python
 use_mplstyle("figure")
 ````
@@ -150,7 +146,9 @@ use_mplstyle("figure")
 </p>
 
 
-### ``aps``
+### Journals
+
+#### APS
 
 Style for generatig single-column figures for APS journals (physical review, ...)
 ````python
