@@ -495,7 +495,7 @@ grid.linewidth: 0.5     # in points
 #figure.titlesize:   large     # size of the figure title (``Figure.suptitle()``)
 #figure.titleweight: normal    # weight of the figure title
 figure.figsize:      6.4, 4.8  # figure size in inches
-#figure.dpi:         100       # figure dots per inch
+figure.dpi:          100       # figure dots per inch
 #figure.facecolor:   white     # figure face color
 #figure.edgecolor:   white     # figure edge color
 #figure.frameon:     True      # enable figure frame
@@ -614,15 +614,15 @@ figure.autolayout: True    # When True, automatically adjust subplot
 ## The default savefig parameters can be different from the display parameters
 ## e.g., you may want a higher resolution, or to make the figure
 ## background white
-#savefig.dpi:       figure      # figure dots per inch or 'figure'
+savefig.dpi:        300         # figure dots per inch or 'figure'
 #savefig.facecolor: auto        # figure face color when saving
 #savefig.edgecolor: auto        # figure edge color when saving
 #savefig.format:    png         # {png, ps, pdf, svg}
-#savefig.bbox:      standard    # {tight, standard}
+savefig.bbox:       tight       # {tight, standard}
                                 # 'tight' is incompatible with pipe-based animation
                                 # backends (e.g. 'ffmpeg') but will work with those
                                 # based on temporary files (e.g. 'ffmpeg_file')
-#savefig.pad_inches:   0.1      # Padding to be used when bbox is set to 'tight'
+savefig.pad_inches:   0.05      # Padding to be used when bbox is set to 'tight'
 #savefig.directory:    ~        # default directory in savefig dialog box,
                                 # leave empty to always use current working directory
 #savefig.transparent: False     # setting that controls whether figures are saved with a

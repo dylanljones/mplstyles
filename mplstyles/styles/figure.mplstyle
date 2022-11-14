@@ -1,5 +1,18 @@
-#### APS DOUBLE COLUMN MATPLOTLIBRC FORMAT
-## https://journals.aps.org/prl/authors#:~:text=Figures%20should%20have%20a%20width,all%20figures%20electronically%20for%20production.
+#### MATPLOTLIBRC FORMAT
+
+## See https://matplotlib.org/users/customizing.html#the-matplotlibrc-file
+## for more details on the paths which are checked for the configuration file.
+##
+## Blank lines, or lines starting with a comment symbol, are ignored, as are
+## trailing comments.  Other lines must have the format:
+##     key: val  # optional comment
+##
+## Formatting: Use PEP8-like style (as enforced in the rest of the codebase).
+## All lines start with an additional '#', so that removing all leading '#'s
+## yields a valid style file.
+
+##### CONFIGURATION BEGINS HERE
+
 
 ## ***************************************************************************
 ## * BACKENDS                                                                *
@@ -43,7 +56,7 @@
 ## ***************************************************************************
 ## See https://matplotlib.org/api/artist_api.html#module-matplotlib.lines
 ## for more information on line properties.
-lines.linewidth: 1.0                # line width in points (min: 0.5)
+lines.linewidth: 1.0                # line width in points
 #lines.linestyle: -                 # solid line
 #lines.color:     C0                # has no affect on plot(); see axes.prop_cycle
 #lines.marker:          None        # the default marker
@@ -76,7 +89,7 @@ lines.linewidth: 1.0                # line width in points (min: 0.5)
 ## Patches are graphical objects that fill 2D space, like polygons or circles.
 ## See https://matplotlib.org/api/artist_api.html#module-matplotlib.patches
 ## for more information on patch properties.
-#patch.linewidth:       1.0    # edge width in points.
+#patch.linewidth:       1      # edge width in points.
 #patch.facecolor:       C0
 #patch.edgecolor:       black  # if forced, or patch is not filled
 #patch.force_edgecolor: False  # True to always use edgecolor
@@ -146,9 +159,9 @@ lines.linewidth: 1.0                # line width in points (min: 0.5)
 ## on font properties.  The 6 font properties used for font matching are
 ## given below with their default values.
 ##
-## The font.family property can take either a single or multiple entries of any
-## combination of concrete font names (not supported when rendering text with
-## usetex) or the following five generic values:
+## The font.family property can take either a concrete font name (not supported
+## when rendering text with usetex), or one of the following five generic
+## values:
 ##     - 'serif' (e.g., Times),
 ##     - 'sans-serif' (e.g., Helvetica),
 ##     - 'cursive' (e.g., Zapf-Chancery),
@@ -189,14 +202,14 @@ lines.linewidth: 1.0                # line width in points (min: 0.5)
 ## relative to font.size, using the following values: xx-small, x-small,
 ## small, medium, large, x-large, xx-large, larger, or smaller
 
-font.family:   serif   # default: sans-serif
+font.family:   serif  # sans-serif
 #font.style:   normal
 #font.variant: normal
 #font.weight:  normal
 #font.stretch: normal
-font.size:    8.0
+font.size:     8.0
 
-font.serif:       DejaVu Serif, Bitstream Vera Serif, Computer Modern Roman, New Century Schoolbook, Century Schoolbook L, Utopia, ITC Bookman, Bookman, Nimbus Roman No9 L, Times New Roman, Times, Palatino, Charter, serif
+font.serif:       Computer Modern Roman, Times New Roman, Times, Computer Modern Roman, DejaVu Serif, Bitstream Vera Serif, New Century Schoolbook, Century Schoolbook L, Utopia, ITC Bookman, Bookman, Nimbus Roman No9 L, Palatino, Charter, serif
 #font.sans-serif: DejaVu Sans, Bitstream Vera Sans, Computer Modern Sans Serif, Lucida Grande, Verdana, Geneva, Lucid, Arial, Helvetica, Avant Garde, sans-serif
 #font.cursive:    Apple Chancery, Textile, Zapf Chancery, Sand, Script MT, Felipa, Comic Neue, Comic Sans MS, cursive
 #font.fantasy:    Chicago, Charcoal, Impact, Western, Humor Sans, xkcd, fantasy
@@ -231,8 +244,6 @@ font.serif:       DejaVu Serif, Bitstream Vera Serif, Computer Modern Roman, New
                          # Values  other than 0 or 6 have no defined meaning.
 #text.antialiased: True  # If True (default), the text will be antialiased.
                          # This only affects raster outputs.
-#text.parse_math: True  # Use mathtext if there is an even number of unescaped
-                        # dollar signs.
 
 
 ## ***************************************************************************
@@ -240,14 +251,13 @@ font.serif:       DejaVu Serif, Bitstream Vera Serif, Computer Modern Roman, New
 ## ***************************************************************************
 ## For more information on LaTeX properties, see
 ## https://matplotlib.org/tutorials/text/usetex.html
-text.usetex:  True  # use latex for all text handling. The following fonts
+text.usetex: True    # use latex for all text handling. The following fonts
                      # are supported through the usual rc parameter settings:
                      # new century schoolbook, bookman, times, palatino,
                      # zapf chancery, charter, serif, sans-serif, helvetica,
                      # avant garde, courier, monospace, computer modern roman,
                      # computer modern sans serif, computer modern typewriter
-text.latex.preamble:    \usepackage{siunitx}
-
+text.latex.preamble: \usepackage{siunitx} \usepackage{amsmath} \usepackage{amssymb}
                         # IMPROPER USE OF THIS FEATURE WILL LEAD TO LATEX FAILURES
                         # AND IS THEREFORE UNSUPPORTED. PLEASE DO NOT ASK FOR HELP
                         # IF THIS FEATURE DOES NOT DO WHAT YOU EXPECT IT TO.
@@ -265,7 +275,8 @@ text.latex.preamble:    \usepackage{siunitx}
                         # loaded, depending on your font settings.
 
 ## The following settings allow you to select the fonts in math mode.
-mathtext.fontset: stix         # Should be 'dejavusans' (default),
+mathtext.fontset: stix  # or dejavuserif
+							   # Should be 'dejavusans' (default),
                                # 'dejavuserif', 'cm' (Computer Modern), 'stix',
                                # 'stixsans' or 'custom' (unsupported, may go
                                # away in the future)
@@ -296,8 +307,8 @@ mathtext.fontset: stix         # Should be 'dejavusans' (default),
 ## https://matplotlib.org/api/axes_api.html#module-matplotlib.axes
 #axes.facecolor:     white   # axes background color
 #axes.edgecolor:     black   # axes edge color
-#axes.linewidth:     0.8     # edge line width
-axes.grid:           True    # display grid or not
+axes.linewidth:      0.5     # edge line width
+axes.grid:           False   # display grid or not
 #axes.grid.axis:     both    # which axis the grid should apply to
 #axes.grid.which:    major   # grid lines at {major, minor, both} ticks
 #axes.titlelocation: center  # alignment of the title: {left, right, center}
@@ -343,7 +354,8 @@ axes.grid:           True    # display grid or not
 
 #axes.unicode_minus: True  # use Unicode for the minus symbol rather than hyphen.  See
                            # https://en.wikipedia.org/wiki/Plus_and_minus_signs#Character_codes
-#axes.prop_cycle: cycler('color', ['1f77b4', 'ff7f0e', '2ca02c', 'd62728', '9467bd', '8c564b', 'e377c2', '7f7f7f', 'bcbd22', '17becf'])
+axes.prop_cycle : cycler('color', ['0C5DA5', '00B945', 'FF9500', 'FF2C00', '845B97', '474747', '9e9e9e'])
+				  # default: cycler('color', ['1f77b4', 'ff7f0e', '2ca02c', 'd62728', '9467bd', '8c564b', 'e377c2', '7f7f7f', 'bcbd22', '17becf'])
                   # color cycle for plot lines as list of string color specs:
                   # single letter, long name, or web-style hex
                   # As opposed to all other parameters in this file, the color
@@ -399,21 +411,21 @@ axes.ymargin:    .05  # y margin.  See `axes.Axes.margins`
 ## * TICKS                                                                   *
 ## ***************************************************************************
 ## See https://matplotlib.org/api/axis_api.html#matplotlib.axis.Tick
-#xtick.top:           False   # draw ticks on the top side
+xtick.top:            True    # draw ticks on the top side
 #xtick.bottom:        True    # draw ticks on the bottom side
 #xtick.labeltop:      False   # draw label on the top
 #xtick.labelbottom:   True    # draw label on the bottom
-#xtick.major.size:    3.5     # major tick size in points
-#xtick.minor.size:    2       # minor tick size in points
-#xtick.major.width:   0.8     # major tick width in points
-#xtick.minor.width:   0.6     # minor tick width in points
+xtick.major.size:     3.0     # major tick size in points
+xtick.minor.size:     1.5     # minor tick size in points
+xtick.major.width:    0.5     # major tick width in points
+xtick.minor.width:    0.5     # minor tick width in points
 #xtick.major.pad:     3.5     # distance to major tick label in points
 #xtick.minor.pad:     3.4     # distance to the minor tick label in points
 #xtick.color:         black   # color of the ticks
 #xtick.labelcolor:    inherit # color of the tick labels or inherit from xtick.color
 #xtick.labelsize:     medium  # font size of the tick labels
-#xtick.direction:     out     # direction: {in, out, inout}
-#xtick.minor.visible: False   # visibility of minor ticks on x-axis
+xtick.direction:      in      # direction: {in, out, inout}
+xtick.minor.visible:  True    # visibility of minor ticks on x-axis
 #xtick.major.top:     True    # draw x axis top major ticks
 #xtick.major.bottom:  True    # draw x axis bottom major ticks
 #xtick.minor.top:     True    # draw x axis top minor ticks
@@ -421,20 +433,20 @@ axes.ymargin:    .05  # y margin.  See `axes.Axes.margins`
 #xtick.alignment:     center  # alignment of xticks
 
 #ytick.left:          True    # draw ticks on the left side
-#ytick.right:         False   # draw ticks on the right side
+ytick.right:          True    # draw ticks on the right side
 #ytick.labelleft:     True    # draw tick labels on the left side
 #ytick.labelright:    False   # draw tick labels on the right side
-#ytick.major.size:    3.5     # major tick size in points
-#ytick.minor.size:    2       # minor tick size in points
-#ytick.major.width:   0.8     # major tick width in points
-#ytick.minor.width:   0.6     # minor tick width in points
+ytick.major.size:     3.0     # major tick size in points
+ytick.minor.size:     1.5     # minor tick size in points
+ytick.major.width:    0.5     # major tick width in points
+ytick.minor.width:    0.5     # minor tick width in points
 #ytick.major.pad:     3.5     # distance to major tick label in points
 #ytick.minor.pad:     3.4     # distance to the minor tick label in points
 #ytick.color:         black   # color of the ticks
 #ytick.labelcolor:    inherit # color of the tick labels or inherit from ytick.color
 #ytick.labelsize:     medium  # font size of the tick labels
-#ytick.direction:     out     # direction: {in, out, inout}
-#ytick.minor.visible: False   # visibility of minor ticks on y-axis
+ytick.direction:      in      # direction: {in, out, inout}
+ytick.minor.visible:  True    # visibility of minor ticks on y-axis
 #ytick.major.left:    True    # draw y axis left major ticks
 #ytick.major.right:   True    # draw y axis right major ticks
 #ytick.minor.left:    True    # draw y axis left minor ticks
@@ -445,21 +457,21 @@ axes.ymargin:    .05  # y margin.  See `axes.Axes.margins`
 ## ***************************************************************************
 ## * GRIDS                                                                   *
 ## ***************************************************************************
-#grid.color:     "#b0b0b0"  # grid color
-grid.linestyle:  :          # dashed
-grid.linewidth:  0.5        # in points
-#grid.alpha:     1.0        # transparency, between 0.0 and 1.0
+#grid.color:     b0b0b0  # grid color
+grid.linestyle:  --      # dashed
+grid.linewidth:  0.5     # in points
+#grid.alpha:     1.0     # transparency, between 0.0 and 1.0
 
 
 ## ***************************************************************************
 ## * LEGEND                                                                  *
 ## ***************************************************************************
 #legend.loc:           best
-#legend.frameon:       True     # if True, draw the legend on a background patch
+legend.frameon:        False    # if True, draw the legend on a background patch
 #legend.framealpha:    0.8      # legend patch transparency
 #legend.facecolor:     inherit  # inherit from axes.facecolor; or color spec
 #legend.edgecolor:     0.8      # background patch boundary color
-legend.fancybox:       True     # if True, use a rounded box for the
+# legend.fancybox:     True     # if True, use a rounded box for the
                                 # legend background, else a rectangle
 #legend.shadow:        False    # if True, give background a shadow effect
 #legend.numpoints:     1        # the number of marker points in the legend line
@@ -485,10 +497,8 @@ legend.fancybox:       True     # if True, use a rounded box for the
 ## See https://matplotlib.org/api/figure_api.html#matplotlib.figure.Figure
 #figure.titlesize:   large     # size of the figure title (``Figure.suptitle()``)
 #figure.titleweight: normal    # weight of the figure title
-#figure.labelsize:   large     # size of the figure label (``Figure.sup[x|y]label()``)
-#figure.labelweight: normal    # weight of the figure label
-figure.figsize:      6.75, 2.531 # figure size in inches (ratio=1.333)
-figure.dpi:          300       # figure dots per inch
+figure.figsize:      3.5, 2.625  # figure size in inches
+figure.dpi:          200       # figure dots per inch (savefig dpi is set differently!)
 #figure.facecolor:   white     # figure face color
 #figure.edgecolor:   white     # figure edge color
 #figure.frameon:     True      # enable figure frame
@@ -525,7 +535,7 @@ figure.autolayout: True    # When True, automatically adjust subplot
 ## ***************************************************************************
 #image.aspect:          equal        # {equal, auto} or a number
 #image.interpolation:   antialiased  # see help(imshow) for options
-#image.cmap:            viridis      # A colormap name (plasma, magma, etc.)
+#image.cmap:            viridis      # A colormap name, gray etc...
 #image.lut:             256          # the size of the colormap lookup table
 #image.origin:          upper        # {lower, upper}
 #image.resample:        True
@@ -539,11 +549,10 @@ figure.autolayout: True    # When True, automatically adjust subplot
 ## * CONTOUR PLOTS                                                           *
 ## ***************************************************************************
 #contour.negative_linestyle: dashed  # string or on-off ink sequence
-#contour.corner_mask:        True    # {True, False}
+#contour.corner_mask:        True    # {True, False, legacy}
 #contour.linewidth:          None    # {float, None} Size of the contour line
                                      # widths. If set to None, it falls back to
                                      # `line.linewidth`.
-#contour.algorithm:          mpl2014 # {mpl2005, mpl2014, serial, threaded}
 
 
 ## ***************************************************************************
@@ -608,22 +617,20 @@ figure.autolayout: True    # When True, automatically adjust subplot
 ## The default savefig parameters can be different from the display parameters
 ## e.g., you may want a higher resolution, or to make the figure
 ## background white
-#savefig.dpi:       figure      # figure dots per inch or 'figure'
+savefig.dpi:        300         # figure dots per inch or 'figure'
 #savefig.facecolor: auto        # figure face color when saving
 #savefig.edgecolor: auto        # figure edge color when saving
 #savefig.format:    png         # {png, ps, pdf, svg}
-#savefig.bbox:      standard    # {tight, standard}
+savefig.bbox:       tight       # {tight, standard}
                                 # 'tight' is incompatible with pipe-based animation
                                 # backends (e.g. 'ffmpeg') but will work with those
                                 # based on temporary files (e.g. 'ffmpeg_file')
-#savefig.pad_inches:  0.1       # padding to be used, when bbox is set to 'tight'
-#savefig.directory:   ~         # default directory in savefig dialog, gets updated after
-                                # interactive saves, unless set to the empty string (i.e.
-                                # the current directory); use '.' to start at the current
-                                # directory but update after interactive saves
-#savefig.transparent: False     # whether figures are saved with a transparent
-                                # background by default
-#savefig.orientation: portrait  # orientation of saved figure, for PostScript output only
+savefig.pad_inches:   0.05      # Padding to be used when bbox is set to 'tight'
+#savefig.directory:    ~        # default directory in savefig dialog box,
+                                # leave empty to always use current working directory
+#savefig.transparent: False     # setting that controls whether figures are saved with a
+                                # transparent background by default
+#savefig.orientation: portrait  # Orientation of saved figure
 
 ### tk backend params
 #tk.window_focus:   False  # Maintain shell focus for TkAgg
@@ -668,10 +675,9 @@ pdf.fonttype:        3  # Output Type 3 (Type3) or Type 42 (TrueType)
 ## * INTERACTIVE KEYMAPS                                                     *
 ## ***************************************************************************
 ## Event keys to interact with figures/plots via keyboard.
-## See https://matplotlib.org/stable/users/explain/interactive.html for more
-## details on interactive navigation.  Customize these settings according to
-## your needs. Leave the field(s) empty if you don't need a key-map. (i.e.,
-## fullscreen : '')
+## See https://matplotlib.org/users/navigation_toolbar.html for more details on
+## interactive navigation.  Customize these settings according to your needs.
+## Leave the field(s) empty if you don't need a key-map. (i.e., fullscreen : '')
 #keymap.fullscreen: f, ctrl+f   # toggling
 #keymap.home: h, r, home        # home or reset mnemonic
 #keymap.back: left, c, backspace, MouseButton.BACK  # forward / backward keys
@@ -701,18 +707,12 @@ pdf.fonttype:        3  # Output Type 3 (Type3) or Type 42 (TrueType)
 #animation.bitrate: -1            # Controls size/quality trade-off for movie.
                                   # -1 implies let utility auto-determine
 #animation.frame_format: png      # Controls frame format used by temp files
-
-## Path to ffmpeg binary.  Unqualified paths are resolved by subprocess.Popen.
-#animation.ffmpeg_path:  ffmpeg
-## Additional arguments to pass to ffmpeg.
-#animation.ffmpeg_args:
-
-## Path to ImageMagick's convert binary.  Unqualified paths are resolved by
-## subprocess.Popen, except that on Windows, we look up an install of
-## ImageMagick in the registry (as convert is also the name of a system tool).
-#animation.convert_path: convert
-## Additional arguments to pass to convert.
-#animation.convert_args: -layers, OptimizePlus
-#
+#animation.ffmpeg_path:  ffmpeg   # Path to ffmpeg binary. Without full path
+                                  # $PATH is searched
+#animation.ffmpeg_args:           # Additional arguments to pass to ffmpeg
+#animation.convert_path: convert  # Path to ImageMagick's convert binary.
+                                  # On Windows use the full path since convert
+                                  # is also the name of a system tool.
+#animation.convert_args:          # Additional arguments to pass to convert
 #animation.embed_limit:  20.0     # Limit, in MB, of size of base64 encoded
                                   # animation in HTML (i.e. IPython notebook)
