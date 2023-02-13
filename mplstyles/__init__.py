@@ -7,6 +7,7 @@
 import os
 import pkg_resources
 import matplotlib.pyplot as plt
+from .colors import set_colorcycle
 
 try:
     from ._version import __version__
@@ -18,7 +19,7 @@ _initialized = False
 
 def get_mplstyles():
     ext = ".mplstyle"
-    styles_dir = pkg_resources.resource_filename('mplstyles', "styles")
+    styles_dir = pkg_resources.resource_filename("mplstyles", "styles")
     styles = list()
     for root, _, files in os.walk(styles_dir):
         for filename in files:
@@ -45,13 +46,15 @@ def register_styles(styles_root_dir):
 
 
 def init_mplstyles():
-    register_styles(pkg_resources.resource_filename('mplstyles', "styles"))
+    register_styles(pkg_resources.resource_filename("mplstyles", "styles"))
 
 
-def use_mplstyle(*name):
+def use_mplstyle(*name, color_cycle=None):
     if not _initialized:
         init_mplstyles()
     plt.style.use(name)
+    if color_cycle is not None:
+        set_colorcycle(color_cycle)
 
 
 def mplstyle_context(*name):
