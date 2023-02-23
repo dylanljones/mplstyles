@@ -16,7 +16,7 @@ legend.fontsize: 7
 font.size: 7
 
 # Font Family
-font.family: serif  # or sans-serif
+font.family:       serif  # or sans-serif
 font.serif:        DejaVu Serif, Bitstream Vera Serif, Computer Modern Roman, New Century Schoolbook, Century Schoolbook L, Utopia, ITC Bookman, Bookman, Nimbus Roman No9 L, Times New Roman, Times, Palatino, Charter, serif
 font.sans-serif:   DejaVu Sans, Arial, Helvetica, Lucida Grande, Verdana, Geneva, Lucid, Avant Garde, sans-serif
 mathtext.fontset : stix  # or dejavuserif or dejavusans
@@ -24,7 +24,7 @@ mathtext.fontset : stix  # or dejavuserif or dejavusans
 # Set line widths
 axes.linewidth : 0.5
 grid.linewidth : 0.5
-lines.linewidth : 1.
+lines.linewidth : 0.8
 lines.markersize: 3
 
 
