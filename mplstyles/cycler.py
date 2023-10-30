@@ -24,7 +24,7 @@ tableau_colorblind = [
     "#CFCFCF"
 ]
 
-cycles = {
+color_cycles = {
     "seaborn-colorblind": seaborn_colorblind,
     "tableau-colorblind": tableau_colorblind,
 }
@@ -32,8 +32,26 @@ cycles = {
 
 def set_colorcycle(color: Union[Sequence, str]) -> None:
     if isinstance(color, str):
-        color = cycles[color]
+        color = color_cycles[color]
     mpl.rcParams["axes.prop_cycle"] = mpl.cycler(color=color)
+
+
+def set_prop_cycle(
+    color: Union[Sequence[Union[str, int]], str] = None,
+    ls: Sequence[str] = None,
+    lw: Sequence[int] = None,
+) -> None:
+    kwargs = dict()
+    if color is not None:
+        if isinstance(color, str):
+            color = color_cycles[color]
+        kwargs["color"] = color
+    if ls is not None:
+        kwargs["ls"] = ls
+    if lw is not None:
+        kwargs["lw"] = lw
+    if kwargs:
+        mpl.rcParams["axes.prop_cycle"] = mpl.cycler(**kwargs)
 
 
 def show_greyscale(file):
