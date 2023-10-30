@@ -1,16 +1,47 @@
 
+# -- Project metadata ------------------------------------------------------------------
+
+[project]
+name = "mplstyles"
+description = "Matplotlib styles"
+readme = "README.md"
+authors = [
+    {name = "Dylan Jones", email = "dylanljones94@gmail.com"},
+]
+license = {file = "LICENSE"}
+dynamic = ["version"]
+requires-python = ">=3.7"
+dependencies = [
+    "numpy",
+    "matplotlib",
+]
+
+[project.optional-dependencies]
+test = [
+    "hypothesis>=6.0.0",
+    "pytest>=6.2.0",
+    "pytest-cov",
+]
+
+
 # -- Build -----------------------------------------------------------------------------
 
 [build-system]
-
 requires = [
-    "setuptools >= 60.0.0",
+    "setuptools >= 61.0.0",
     "setuptools_scm[toml] >= 4",
     "setuptools_scm_git_archive",
     "wheel >= 0.37.0",
 ]
 build-backend = "setuptools.build_meta"
 
+[tool.setuptools]
+platforms = ["any"]
+zip-safe = false
+include-package-data = true
+
+[tool.setuptools.packages]
+find = {}
 
 [tool.setuptools_scm]
 
@@ -25,3 +56,25 @@ git_describe_command = "git describe --dirty --tags --long --match * --first-par
 line-length = 88
 include = '\.pyi?$'
 exclude = "__main__.py|_version.py"
+
+
+# -- Linting ---------------------------------------------------------------------------
+
+[tool.flake8]
+max-line-length = 88
+ignore = ["D203"]
+extend-ignore = ["E203", "W503"]
+per-file-ignores = ["__init__.py:F401"]
+exclude = [
+    ".git",
+    ".idea",
+    "__pycache__",
+    "build",
+    "dist",
+    "*/_version.py",
+]
+
+[tool.pydocstyle]
+add_ignore = [
+    "D105",  # ignore undocumented dunder methods like ``__str__`
+]
