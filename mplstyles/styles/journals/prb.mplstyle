@@ -1,0 +1,72 @@
+# Matplotlib style for Nature journal figures.
+# In general, they advocate for all fonts to be panel labels to be sans serif
+# and all font sizes in a figure to be 7 pt and panel labels to be 8 pt bold.
+
+# Figure size in inches
+# max width is 3.5 for single column
+# ratio=1.33333 or 1.61803398 (golden ration)
+figure.figsize: 3.375, 2.531  # ratio=1.33333
+# figure.figsize : 3.3, 2.5    # ratio=1.33333
+figure.dpi:     400       # figure dots per inch (savefig dpi is set differently!)
+
+figure.autolayout: False
+# Font sizes
+axes.labelsize: 7
+xtick.labelsize: 7
+ytick.labelsize: 7
+legend.fontsize: 7
+font.size: 7
+
+# Font Family
+font.family:       serif  # or sans-serif
+font.serif:        DejaVu Serif, Bitstream Vera Serif, Computer Modern Roman, New Century Schoolbook, Century Schoolbook L, Utopia, ITC Bookman, Bookman, Nimbus Roman No9 L, Times New Roman, Times, Palatino, Charter, serif
+font.sans-serif:   DejaVu Sans, Arial, Helvetica, Lucida Grande, Verdana, Geneva, Lucid, Avant Garde, sans-serif
+mathtext.fontset : stix  # or dejavuserif or dejavusans
+
+# Set line widths
+axes.linewidth : 0.5
+grid.linewidth : 0.5
+lines.linewidth : 0.7
+lines.markersize: 2
+
+
+# Set grid style
+grid.linestyle:  :          # dashed
+
+# Always save as 'tight'
+savefig.bbox : tight
+# savefig.pad_inches : 0.01  # Use virtually all space when we specify figure dimensions
+
+# LaTeX packages
+text.latex.preamble : \usepackage{amsmath} \usepackage{amssymb} \usepackage{sfmath} \usepackage[detect-all,locale=DE]{siunitx}
+
+axes.prop_cycle : cycler('color', ['0173B2', 'DE8F05', '029E73', 'D55E00', 'CC78BC', 'CA9161', 'FBAFE4', '949494', 'ECE133', '56B4E9']) #  + cycler('marker', ['o', 's', 'D', 'P', 'X', 'x', '*', '<', '>', '^'])
+
+
+
+## ***************************************************************************
+## * LEGEND                                                                  *
+## ***************************************************************************
+#legend.loc:           best
+legend.frameon:        True    # if True, draw the legend on a background patch
+#legend.framealpha:    0.8      # legend patch transparency
+#legend.facecolor:     inherit  # inherit from axes.facecolor; or color spec
+#legend.edgecolor:     0.8      # background patch boundary color
+#legend.fancybox:      True     # if True, use a rounded box for the
+                                # legend background, else a rectangle
+#legend.shadow:        False    # if True, give background a shadow effect
+#legend.numpoints:     1        # the number of marker points in the legend line
+#legend.scatterpoints: 1        # number of scatter points
+#legend.markerscale:   1.0      # the relative size of legend markers vs. original
+#legend.fontsize:      medium
+#legend.labelcolor:    None
+#legend.title_fontsize: None    # None sets to the same as the default axes.
+
+## Dimensions as fraction of font size:
+#legend.borderpad:     0.4  # border whitespace
+#legend.labelspacing:  0.5  # the vertical space between the legend entries
+#legend.handlelength:  2.0  # the length of the legend lines
+#legend.handleheight:  0.7  # the height of the legend handle
+#legend.handletextpad: 0.8  # the space between the legend line and legend text
+#legend.borderaxespad: 0.5  # the border between the axes and legend edge
+#legend.columnspacing: 2.0  # column separation
