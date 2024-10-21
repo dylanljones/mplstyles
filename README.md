@@ -23,10 +23,10 @@ style sheets take precedence over ``matplotlibrc`` files.
 This project uses the third option and is intended as a collection of usefull
 matplotlibrc style files for scientific plotting.
 
-Please feel free to add your own favourite styles to the libary! Start from the empty 
+Please feel free to add your own favourite styles to the libary! Start from the empty
 template file ``default.mplstyle`` and change the parameters you like.
-If you are happy with the style, add the file to the ``mplstyles`` package and open 
-a pull request. 
+If you are happy with the style, add the file to the ``mplstyles`` package and open
+a pull request.
 
 
 > **Note**: If you are using PyCharm to edit the ``*.mplstyle`` files, right-click on the file
@@ -51,7 +51,7 @@ with mplstyle_context("figure"):
     ...
 ````
 
-Alternatively, the included styles can be registered and used via the normal 
+Alternatively, the included styles can be registered and used via the normal
 ``plt.style`` method:
 ````python
 from mplstyles import init_mplstyles
@@ -81,15 +81,15 @@ The rc-files are contained in the ``.../mplstyles/styles/`` directory.
 
 ## Primary styles
 
-The main styles are ``plot`` and ``figure``. The ``plot`` style is intended for plotting 
+The main styles are ``plot`` and ``figure``. The ``plot`` style is intended for plotting
 results while working, preparing or creating a pre-print. The ``figure`` style should be
-used for generating the final figures for publications. 
+used for generating the final figures for publications.
 
 
 ## Journal styles
 
 The journal styles are *additive* and should be used with the primary styles.
-They define the format specifications for each jornal. The style for a single 
+They define the format specifications for each jornal. The style for a single
 column figure for the APS fournal, for example, can be used as follows:
 ````python
 from mplstyles import use_mplstyle
@@ -97,7 +97,7 @@ from mplstyles import use_mplstyle
 use_mplstyle("figure", "aps")
 ...
 ````
-You also can mix in the figure size of 1.5- or double-column figures via the context 
+You also can mix in the figure size of 1.5- or double-column figures via the context
 manager:
 ````python
 from mplstyles import use_mplstyle, mplstyle_context
