@@ -5,7 +5,6 @@
 # Copyright (c) 2022, Dylan Jones
 
 import os
-import pkg_resources
 import matplotlib.pyplot as plt
 from .cycler import set_colorcycle, set_prop_cycle
 
@@ -17,9 +16,22 @@ except ImportError:
 _initialized = False
 
 
+def _get_styles_dir():
+    try:
+        import importlib.resources
+
+        styles_dir = importlib.resources.files("mplstyles").joinpath("styles")
+    except (ImportError, AttributeError):
+        # Python <3.9 does not support importlib.resources.files
+        import pkg_resources
+
+        styles_dir = pkg_resources.resource_filename("mplstyles", "styles")
+    return styles_dir
+
+
 def get_mplstyles():
     ext = ".mplstyle"
-    styles_dir = pkg_resources.resource_filename("mplstyles", "styles")
+    styles_dir = _get_styles_dir()
     styles = list()
     for root, _, files in os.walk(styles_dir):
         for filename in files:
@@ -53,7 +65,8 @@ def register_styles(styles_root_dir):
 
 
 def init_mplstyles():
-    register_styles(pkg_resources.resource_filename("mplstyles", "styles"))
+    styles_dir = _get_styles_dir()
+    register_styles(styles_dir)
 
 
 def use_mplstyle(*name, color_cycle=None, ls_cycle=None, lw_cylce=None):
