@@ -117,10 +117,10 @@ use_mplstyle("figure", "aps")
 ...  # single-coluimn plots
 
 with mplstyle_context("aps1.5"):
-    ... # 1.5-column plots
+    ...  # 1.5-column plots
 
 with mplstyle_context("aps2"):
-    ... # double-column plots
+    ...  # double-column plots
 ````
 
 
