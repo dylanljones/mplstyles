@@ -7,7 +7,7 @@
 import os.path
 import numpy as np
 import matplotlib.pyplot as plt
-from mplstyles import get_mplstyles, init_mplstyles
+from mplstyles import init_mplstyles
 
 init_mplstyles()
 
