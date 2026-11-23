@@ -21,7 +21,7 @@ tableau_colorblind = [
     "#898989",
     "#A2C8EC",
     "#FFBC79",
-    "#CFCFCF"
+    "#CFCFCF",
 ]
 
 color_cycles = {
@@ -63,5 +63,5 @@ def show_greyscale(file):
     fig, ax = plt.subplots()
     ax.axes.get_xaxis().set_visible(False)
     ax.axes.get_yaxis().set_visible(False)
-    ax.imshow(np.asarray(image), cmap='gray', vmin=0, vmax=255)  # noqa
+    ax.imshow(np.asarray(image), cmap="gray", vmin=0, vmax=255)  # noqa
     return fig, ax
